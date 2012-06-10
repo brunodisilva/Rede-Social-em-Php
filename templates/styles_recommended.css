@@ -1,0 +1,52 @@
+.recommended_action {
+  border: 1px dotted #ccc;
+  padding: 3px;
+  border-right: 5px solid #ddd;
+}
+.recommended_stat {
+  padding: 3px;
+  border-bottom: 1px solid #ccc;
+}
+.recommended_link {
+  padding: 3px;
+  text-align: right;
+}
+.recommended_profile_entry {
+  margin: 5px 0;
+}
+.recommended_profile_entry td {
+  padding: 2px;
+}
+
+.recommended_entry {
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  width: 100%;
+}
+.recommended_entry td {
+  padding: 10px;
+}
+.recommended_entry td.recommended_photo {
+  text-align: center;
+  width: 100px;
+  vertical-align: top;
+}
+.recommended_entry td.recommended_infos {
+  vertical-align: top;
+}
+
+.recommended_tools {
+	margin: 10px;
+	text-align: right;
+}
+.recommended_tools a:link,
+.recommended_tools a:visited {
+  border: 1px solid #ddd;
+  border-left: 5px solid #ddd;
+  padding: 7px;
+  margin: 5px;
+}
+
+ul.recommended_user_tools {
+  float: right;
+}

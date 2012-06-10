@@ -1,0 +1,382 @@
+<html>  
+
+<head> 
+
+<meta name="description" content="Mang xa hoi danh cho hoc sinh sinh vien va cong chuc. Tai day ban co the upload anh, dang blog, xem phim, nghe nhac cung nhu ket noi voi tat ca cac thanh vien khac.">
+
+<meta name="keywords" content="faceviet, facebook clone, vietnamese facebook, facebook cua vietnam, mang xa hoi, hoc sinh, sinh vien, cong chuc, tim ban, ket ban, chia se cam xuc, blog cho nguoi viet, xem tin, nghe nhac, tim ban cu, tim viec, tim nguoi yeu, chit chat lung tung, nhom on thi">
+
+<meta name="robots" content="index,follow">
+
+<meta name="author" content="faceViet">
+
+<meta name="language" content="vietnamese"> 
+
+<meta name="verify-v1" content="NgovwbgrkLlb0K2oiM7EIXgr124LVLY9a1ZbESNW4/U=" /> 
+
+ <title>faceViet.com - Gương Mặt Bạn Bè -  - 
+	   
+	 </title>   
+
+<base href='http://faceviet.com/'>
+
+<link rel="stylesheet" href="./templates/styles.css" title="stylesheet" type="text/css">  
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<!--[if gte IE 5.5]>
+
+<![if lte IE 6]>
+
+<iframe id="shim" src="" style="position:absolute;display:none;filter:progid:DXImageTransform.Microsoft.Chroma(Color='#ffffff');" scrolling="no" frameborder="0"></iframe>
+
+<iframe id="shim2" src="" style="position:absolute;display:none;filter:progid:DXImageTransform.Microsoft.Chroma(Color='#ffffff');" scrolling="no" frameborder="0"></iframe>
+
+<![endif]>
+
+<![endif]-->
+
+
+<!-- jsProgressBarHandler prerequisites : prototype.js -->
+<script type="text/javascript" src="js/prototype/prototype.js"></script>     
+<!-- jsProgressBarHandler core -->
+<script type="text/javascript" src="js/bramus/jsProgressBarHandler.js"></script>
+
+
+
+
+
+<script type="text/javascript" src="./include/js/tips.js"></script>
+
+<script type="text/javascript" src="./include/js/showhide.js"></script>
+
+<script type="text/javascript" src="./include/js/suggest.js"></script>
+
+<script type="text/javascript" src="./include/js/status.js"></script>
+
+<script type="text/javascript" src="./include/js/semods.js"></script> 
+<script type="text/javascript" src="./include/js/umenu.js"></script>
+
+
+<script type="text/javascript" src="./js/suggest_DH.js"></script>
+
+<script type="text/javascript" src="./js/suggest_PT.js"></script>
+
+ 
+
+<SCRIPT LANGUAGE="JavaScript">
+
+<!-- Begin
+
+function popUp(URL) {
+
+day = new Date();
+
+id = day.getTime();
+
+eval("page" + id + " = window.open(URL, '" + id + "', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=840,height=620,left = 240,top = 212');");
+
+}
+
+// End -->
+
+</script> 
+
+<script type="text/javascript">
+
+// Copyright 2006-2007 javascript-array.com
+
+
+
+var timeout	= 500;
+
+var closetimer	= 0;
+
+var ddmenuitem	= 0;
+
+
+
+// open hidden layer
+
+function mopen(id) 
+
+{	
+
+	// cancel close timer
+
+	mcancelclosetime();
+
+
+
+	// close old layer
+
+	if(ddmenuitem) ddmenuitem.style.visibility = 'hidden';
+
+
+
+	// get new layer and show it
+
+	ddmenuitem = document.getElementById(id);
+
+	ddmenuitem.style.visibility = 'visible';
+
+
+
+}
+
+// close showed layer
+
+function mclose()
+
+{
+
+	if(ddmenuitem) ddmenuitem.style.visibility = 'hidden';
+
+}
+
+
+
+// go close timer
+
+function mclosetime()
+
+{
+
+	closetimer = window.setTimeout(mclose, timeout);
+
+}
+
+
+
+// cancel close timer
+
+function mcancelclosetime()
+
+{
+
+	if(closetimer)
+
+	{
+
+		window.clearTimeout(closetimer);
+
+		closetimer = null;
+
+	}
+
+}
+
+
+
+// close layer when click-out
+
+document.onclick = mclose; 
+
+</script>
+
+ 
+
+<style type='text/css'></style> 
+
+ 
+
+<script language="JavaScript" type="text/javascript" src="pphlogger.js"></script>
+
+<noscript><img alt="" src="http://www.faceviet.com/tracker/pphlogger.php?id=faceviet&st=img"></noscript>
+
+
+
+ </head> 
+
+<body>
+
+
+<table cellpadding='0' cellspacing='0' width='100%' align='center'>
+
+<tr>
+
+<td align='center'>
+
+
+
+<div class='ad_top' style='display: block; visibility: visible;'></div> 
+
+
+
+<table cellpadding='0' cellspacing='0' align='center' width='100%'>
+
+<tr>
+ 
+<td class='topbar1'><a target='_top'  href='/'><img src='./images/logo.gif' border='0'></a></td>
+
+<td class='topbar1' align='right'>
+
+  <form action='search.php' method='POST'>
+
+  <table cellpadding='0' cellspacing='0'>
+
+  <tr>
+
+  <td>Tìm:&nbsp;</td>
+
+  <td><input type='text' name='search_text' class='text' size='25'>&nbsp;</td>
+
+  <td><input type='submit' class='button' value='Go'></td>
+
+  </tr>
+
+  </table>
+
+  <input type='hidden' name='task' value='dosearch'>
+
+  <input type='hidden' name='t' value='0'>
+
+  </form>
+
+<INPUT id=him_auto onclick=setMethod(0); type=radio name=viet_method>AUTO 
+
+<INPUT id=him_telex onclick=setMethod(1); type=radio name=viet_method>TELEX 
+
+<INPUT id=him_vni onclick=setMethod(2); type=radio name=viet_method>VNI 
+
+<INPUT id=him_off onclick=setMethod(-1); type=radio name=viet_method>OFF 
+
+</td>
+
+</tr>
+
+<tr>
+
+<td class='topbar2'>
+
+<literal>
+
+<ul id="sddm"> 
+     <li><a target='_top'  href='home.php' class='top_menu_item'>Trang Chủ</a></li>
+
+    <li><a target='_top'  href='search_advanced.php' class='top_menu_item'>
+	Thành viên</a></li>
+
+  	   <li><a target='_top'  href='newinvite.php' class='top_menu_item'>
+	Mời bạn bè</a></li>
+    <li><a target='_top'  href="#" class='top_menu_item'
+
+        onmouseover="mopen('m1')" 
+
+        onmouseout="mclosetime()">Giải trí</a> 
+
+        <div id="m1" 
+
+            onmouseover="mcancelclosetime()" 
+
+            onmouseout="mclosetime()">
+
+        <a target='_top'  href="/nhac/" class='top_menu_item'>Nghe Nhạc</a>
+
+        <a target='_top'  href="/phim/" class='top_menu_item'>Xem phim</a>
+
+        <a target='_top'  href="/sach/" class='top_menu_item'>Đọc Truyện </a>
+
+
+
+        </div>
+
+    </li>
+</ul>
+
+</literal>
+
+</td>
+
+<td class='topbar2_right' width="40%">
+
+
+
+ 
+  <b><a target='_top'  href='signup.php' class='top_menu_item'>Đăng ký</a>&nbsp;&nbsp;&nbsp;
+
+  <a target='_top'  href='login.php' class='top_menu_item'>Đăng nhập</a></b>
+
+
+</td>
+
+</tr>
+
+<tr><td class='shadow' colspan='2'><img src='./images/shadow.gif' height='5' border='0'></td></tr>
+</table>
+
+<table cellpadding='0' cellspacing='0' width='800' align='center'>
+
+<tr>
+
+<td align='center'>
+
+
+<table cellpadding='0' cellspacing='0' width='100%' align='center'>
+
+<tr>
+<td>
+
+ 
+</td>
+<td class='content'>
+
+
+
+
+
+<img src='./images/icons/error48.gif' border='0' class='icon_big'>
+<div class='page_header'>Đã bị lỗi</div>
+Profile bạn đang tìm kiếm đã bị xóa hoặc không còn tồn tại.
+
+<br><br><br>
+<input type='button' class='button' value='Quay lại' onClick='history.go(-1)'>
+
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-3660865-1";
+urchinTracker();
+</script>
+
+<div class='ad_bottom' style='display: block; visibility: visible;'> 
+  
+</div>
+
+<div align="center">
+  <table cellpadding='0' cellspacing='0' style="margin:20px 0px 20px 0px;border: 1px solid #DDDDDD;padding:4px;">
+    <tr>
+    <td style="color:#A0A0A0;padding:6px 4px 6px 6px;">
+      <img src='./images/icons/rss16.gif' border='0' class='icon'>
+    </td>
+    <td>
+      <a type="application/rss+xml"
+            href="profile.php?feed"
+            style="display:block;padding:6px;color:#C0C0C0;">
+        View All
+      </a>
+    </td>
+        <td>
+      <a type="application/rss+xml"
+            href="profile.php?feed&user="
+            style="display:block;padding:6px;color:#C0C0C0;">
+        User
+      </a>
+    </td>
+        </tr>
+  </table>
+</div>
+ 
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+<script src="js/avim.js"></script>
+</body>
+</html>

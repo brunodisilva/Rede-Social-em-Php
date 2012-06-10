@@ -1,0 +1,239 @@
+<!-- 
+ActiveX/Desktop Contacts Importer
+HTML codes for ActiveX hosting and configuration
+Note: IE will reload current url using HTTP GET once user installs the ActiveX. Any state stored in hidden POST fields would be lost.
+
+The following callbacks are called:
+
+function dabiSubmitResult(res);		//Called when result is obtained (res)
+function dabiDownloadImporter();	//Called when user chooses to download importer instead
+function dabiUnsupportedOS();		//Called when OS is unsupported
+function dabiUnsupportedBrowser();	//Called when browser is unsupported
+
+Copyright 2009 Octazen Solutions. All Rights Reserved
+WWW: http://www.octazen.com
+Email: support@octazen.com
+-->
+<style type="text/css">
+/* Progress bar */
+.abi_progressbar {
+	border: 2px solid #FFCC00;
+	background: #FFFFFF;
+	position: relative;
+	width: 250px;
+	height: 2em;
+	margin-bottom: 4px;
+}
+.abi_progressbar div {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	background-color: #FFCC00;
+}
+.abi_progressbar div p {
+	white-space: nowrap;
+	display: block;
+	height: 100%;
+	margin: 0;
+	padding: 0 1em;
+	line-height: 2em;
+	font-weight: bold;
+}
+</style>
+<div id="abi_pleasewait"> Please wait... </div>
+<object id="dabiImporter" classid="clsid:C42B23DF-334C-4AD0-9AB4-91FF53D04239" codebase="OzDesktopImporter.cab#Version=-1,-1,-1,-1" style="display:none" width="0" height="0" STANDBY="Loading Importer..." VIEWASTEXT >
+</object>
+<script language="javascript">
+var abi_configstr = "{CONFIGSTRING}";
+var abi_pasteMonitorIntervalId = null;
+var abi_intervalId = null;
+var abi_timeoutId = null;
+var abi_hasObject = false;
+var abi_importer = null;
+function dabiHideContent(d) {var ele = document.getElementById(d);if (ele!=null && ele!=undefined) ele.style.display = "none";}
+function dabiShowContent(d) {var ele = document.getElementById(d);if (ele!=null && ele!=undefined) ele.style.display = "block";}
+
+function dabiPollDetectCompleted()
+{
+	if (abi_importer.DetectSourcesCompleted)
+	{
+		clearInterval(abi_intervalId);
+		var sources = abi_importer.AvailableSources;
+		if (sources.indexOf("[ol]")!=-1) {dabiShowContent("abi_ol_cb");document.getElementById("abi_ol").checked=true;}
+		if (sources.indexOf("[olnk2]")!=-1) {dabiShowContent("abi_olnk2_cb");document.getElementById("abi_olnk2").checked=true;}
+		if (sources.indexOf("[wab]")!=-1) {dabiShowContent("abi_wab_cb");document.getElementById("abi_wab").checked=true;}
+		if (sources.indexOf("[wc]")!=-1) {dabiShowContent("abi_wc_cb");	document.getElementById("abi_wc").checked=true;}
+		if (sources.indexOf("[msn]")!=-1) {dabiShowContent("abi_msn_cb"); document.getElementById("abi_msn").checked=true;}
+		dabiHideContent("abi_activex_detecting");
+		dabiShowContent("abi_sources");
+	}
+}
+
+function dabiPollImportCompleted()
+{
+	var r = abi_importer.ImportCompletion;
+	if (r==0) //Running
+	{
+		//Wait...
+	}
+	else if (r==1) //Aborted
+	{
+		//User aborted the import request. 
+		clearInterval(abi_intervalId);
+		dabiShowContent("abi_sources");
+		dabiHideContent("abi_progress");
+	}
+	else if (r==2) //completed
+	{
+		//Successful import
+		clearInterval(abi_intervalId);
+		dabiSubmitResult(abi_importer.ImportResult);
+	}
+	else if (r==3) //error
+	{
+		//Error importing
+		clearInterval(abi_intervalId);
+		dabiShowContent("abi_sources");
+		dabiHideContent("abi_progress");
+	}
+	else
+	{
+		//Something else.
+		clearInterval(abi_intervalId);
+	}
+}
+
+//Called when page loads. Show appropriate layer depending on OS and browser capability  
+function dabiInit() {
+	clearTimeout(abi_timeoutId);
+	dabiHideContent("abi_pleasewait");
+	//If it's windows
+	if (/windows/i.test(navigator.userAgent)) {
+		//If it's IE
+		if (/msie/i.test(navigator.userAgent) && !/opera/i.test(navigator.userAgent)) {
+			var noObject = true;
+			try {noObject = typeof(document.dabiImporter)=="unknown" || typeof(document.dabiImporter)=="undefined" || !document.dabiImporter.object;} catch (e) {/*alert(e.message);*/}
+			if (noObject) {
+				//Couldn't obtain the object from <object> tag. Instruction user to install ActiveX by 
+				//clicking on the yellow bar, or proceed to download version.
+				dabiShowContent("abi_activex_instructions");
+			}
+			else {
+				//Successfully obtained the ActiveX obejct from the <object> tag
+				abi_hasObject = true;
+				abi_importer = document.dabiImporter.object;
+				dabiShowContent("abi_activex");
+				//Workaround for issue in some IE7 that calls ActiveX before listeners are advised for events
+				abi_timeoutId = setTimeout('dabiSetupActiveX()',0);
+			}
+		}
+		else {
+			dabiUnsupportedBrowser();
+		}
+	}
+	else {
+		dabiUnsupportedOS();
+	}
+}
+
+function dabiSetupActiveX() {
+	clearTimeout(abi_timeoutId);
+	abi_importer.Configure(abi_configstr);	
+	
+	//Detect available sources
+	dabiShowContent("abi_activex_detecting");
+	abi_importer.GetAvailableSourcesAsync();
+	
+	//Poll for source detection completion.
+	//Polling used instead of event handlers which seem to be somewhat buggy in IE7+
+	abi_intervalId = setInterval("dabiPollDetectCompleted()",100);
+}
+
+function dabiImport() {
+	dabiShowContent("abi_progress");
+
+	//Specify which sources to import from.
+	var sources = "";
+	if (document.getElementById("abi_ol").checked) sources+="[ol]";
+	if (document.getElementById("abi_olnk2").checked) sources+="[olnk2]";
+	if (document.getElementById("abi_wab").checked) sources+="[wab]";
+	if (document.getElementById("abi_wc").checked) sources+="[wc]";
+	if (document.getElementById("abi_msn").checked) sources+="[msn]";
+
+	abi_importer.Sources=sources;
+	
+	var res = abi_importer.ImportAsync("");
+	dabiHideContent("abi_sources");
+
+	//Poll for completion. Polling used instead of event handlers which seem to be somewhat buggy in IE7+
+	abi_intervalId = setInterval("dabiPollImportCompleted()",100);
+}
+
+function abiAbortImport() {
+	abi_importer.Abort();
+}
+
+</script>
+<script language="jscript">
+function dabiImporterImporting(contactType,count,total) {
+	//Update progress bar and text
+	if (total==0) {count=0;total=1;}
+	var p = Math.round(count*100.0/total);
+	document.getElementById("abi_pbar_p").style.width=p+"%";
+	var t = document.getElementById("abi_ptext");
+	var source = "";
+	switch (contactType) {
+	case "ol": source = "Outlook Address Book";break;
+	case "olnk2": source = "Outlook Autocomplete History";break;
+	case "wab": source = "Outlook Express";break;
+	case "wc": source = "Windows (Vista) Contacts";break;
+	case "msn": source = "MSN";break;
+	}
+	t.innerText = source+" "+p+"%";
+}
+</script>
+<script language="vbscript">
+Sub dabiImporter_Importing (contactType,count,total)
+	dabiImporterImporting contactType,count,total
+End Sub
+</script>
+
+<div id="abi_activex_instructions" style="display:none">
+  <!-- This is shown when ActiveX cannot be instantiated -->
+  <div style="color:#FF0000; font-weight:bold; font-size:70px">&#8593;</div>
+  If you see a yellow bar above, click it and select "Install This Add-on..." or "Install ActiveX Control..." to enable the Outlook / Outlook Express contacts importer to start.<br/>
+  <br/>
+  If you do not see the option, <a href="#" onclick="dabiDownloadImporter();return false;">click here to download the Contacts Importer.</a> 
+</div>
+
+<!-- ActiveX installed and ready to use ====================================================== -->
+<div id="abi_activex" style="display:none">
+    <div id="abi_activex_detecting"> Detecting available address books. Please wait... </div>
+    <div id="abi_progress" style="display:none">
+      <div class="abi_progressbar">
+        <div style="width:0%;" id="abi_pbar_p">
+          <p><span id="abi_ptext">Importing Contacts ...</span><span style="display:none">&nbsp;</span></p>
+        </div>
+      </div>
+      <br/>
+      <input type="button" name="abiAbortButton" value="Cancel" onClick="abiAbortImport();return false;">
+    </div>
+    <!-- These checkboxes will be shown/hidden depending on available services -->
+    <div id="abi_sources" style="display:none"><b>Import contacts from : </b><br/>
+      <br/>
+      <div id="abi_ol_cb" style="display:none"><label><input id="abi_ol" type="checkbox" value="[ol]">Outlook Address Book</label></div>
+      <div id="abi_olnk2_cb" style="display:none"><label><input id="abi_olnk2" type="checkbox" value="[olnk2]">Outlook Autocomplete History</label></div>
+      <div id="abi_wab_cb" style="display:none"><label><input id="abi_wab" type="checkbox" value="[wab]">Outlook Express</label></div>
+      <div id="abi_wc_cb" style="display:none"><label><input id="abi_wc" type="checkbox" value="[wc]">Windows (Vista) Contacts</label></div>
+      <div id="abi_msn_cb" style="display:none"><label><input id="abi_msn" type="checkbox" value="[msn]">MSN Messenger</label></div>
+      <br/>
+      <input type="button" name="abiImportButton" value="Import Contacts" onClick="dabiImport(); return false;">
+    </div>
+</div>
+
+<script type="text/javascript">
+//IMPORTANT! We start the script once body finishes loading
+abi_timeoutId = setTimeout('dabiInit()',0);
+//window.onload=dabiInit;
+</script>

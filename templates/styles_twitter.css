@@ -1,0 +1,172 @@
+.SEP_Twitter_Table td {
+	padding-bottom: 4px;
+	padding-top: 4px;
+	border-bottom: 1px dashed #c0c0c0;
+}
+
+.SEP_Twitter_Table tr:hover {
+	background:#f2f2f2;
+	visibility:visible;
+}
+.SEP_Twitter_Table tr:hover .SEP_Twitter_Tweet_Options {
+	visibility:visible;
+}
+
+.SEP_Twitter_Small {
+	color: #c0c0c0;
+	font-size: 0.9em;
+	font-style: italic;	
+}
+.SEP_Twitter_OptionsLink {
+	font-style:normal;
+	padding-left:10px;	
+}
+.SEP_Twitter_OptionsLink a {
+	text-decoration:none;
+	color:#c0c0c0;
+}
+.SEP_Twitter_OptionsLink a:hover {
+	color:#336699;
+	text-decoration:none;
+}
+
+.SEP_Twitter_TextBig {
+	font-size:1.1em;
+}
+
+.SEP_Twitter_Header {
+	font-size:1.1em;
+	font-weight:bold;
+	margin-bottom:7px;	
+	padding-bottom:2px;
+	border-bottom:2px solid #c0c0c0;
+}
+
+.SEP_Twitter_Tweet_Options {
+	float:right;
+	padding:0px 3px;	
+	visibility:hidden;
+}
+.SEP_Twitter_Tweet_Options img {
+	cursor:pointer;
+	margin-bottom:3px;
+}
+
+.SEP_Twitter_ProfileImg {
+	margin-left:2px;	
+}
+
+
+
+.SEP_Twitter_Tweet_Form {
+	width:500px;	
+	background: url(../images/twitter_bird.gif) no-repeat;
+	padding-left:107px;
+	height:100px;
+	border-bottom:1px dashed #f0f0f0;
+	margin-bottom:20px;
+}
+.SEP_Twitter_Tweet_Form_Small {
+	width:100%;	
+	height:100px;
+	border-bottom:1px dashed #f0f0f0;
+	margin-bottom:20px;
+}
+
+.SEP_Twitter_Tweet_Sending {
+	background: url(../images/twitter_bird.gif) no-repeat;
+	padding:0px 0px 0px 140px;
+	height:100px;	
+	width:500px;		
+	font-weight:bold;
+	font-size:1.1em;	
+	border-bottom:1px dashed #f0f0f0;
+	margin-bottom:20px;	
+}
+.SEP_Twitter_Tweet_Sending_Small {
+	padding:0px 0px 0px 20px;
+	height:100px;	
+	width:100%;		
+	font-weight:bold;
+	font-size:1.1em;	
+	border-bottom:1px dashed #f0f0f0;
+	margin-bottom:20px;	
+}
+.SEP_Twitter_Tweet_Sending img {
+	padding-right:10px;
+	margin-bottom:-8px;
+}
+
+.SEP_Twitter_Tweet_Success {
+	background: url(../images/twitter_bird.gif) no-repeat;	
+	padding:0px 0px 0px 140px;
+	height:100px;	
+	width:500px;		
+	font-weight:bold;
+	font-size:1.1em;	
+	cursor:pointer;
+	border-bottom:1px dashed #f0f0f0;
+	margin-bottom:20px;	
+}
+.SEP_Twitter_Tweet_Success_Small {
+	padding:0px 0px 0px 20px;
+	height:100px;	
+	width:100%;		
+	font-weight:bold;
+	font-size:1.1em;	
+	cursor:pointer;
+	border-bottom:1px dashed #f0f0f0;
+	margin-bottom:20px;	
+}
+.SEP_Twitter_Tweet_Success img {
+		
+	padding-right:10px;
+	margin-bottom:-3px;
+}
+
+.SEP_Twitter_Tweet_Form .SEP_Twitter_Tweet_Characters_Counter {
+	float:right;	
+	font-size:1.3em;
+	font-weight:bold;	
+	font-style:italic;
+}
+
+.SEP_Twitter_Tweet_Form .SEP_Twitter_Tweet_Heading {
+	font-size:1.1em;
+	font-weight:bold;
+}
+
+.SEP_Twitter_Tweet_Form .SEP_Twitter_Tweet_Textarea {
+	width:100%;
+	margin-top:4px;
+	height:3em;
+}
+
+.SEP_Twitter_Tweet_Form .SEP_Twitter_Tweet_Submit {
+
+}
+
+.SEP_Twitter_Tweet_Form .SEP_Twitter_Tweet_ScreenName {
+	font-size:0.9em;
+	color:#c0c0c0;
+	padding-right:30px;
+}
+
+.SEP_Twitter_Tweet_Link {
+	margin-bottom:10px;	
+}
+
+.SEP_Twitter_Tweet_Form .counterNegative {
+	color:#ff0000;	
+}
+
+.SEP_Twitter_Error {
+	color:#BB3737;
+	font-weight:bold;
+	margin-bottom:10px;
+	font-size:1.1em;
+}
+
+.SEP_Twitter_Widget_TextSmaller .SEP_Twitter_TextBig {
+	font-size:1.0em;	
+}

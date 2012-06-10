@@ -1,0 +1,136 @@
+body {
+	padding: 0;
+	margin: 4px 0 0;
+	background-color: #ffffff;
+	text-align: center;
+	}
+
+img {
+	border: 0;
+	}
+
+#adspace {
+	padding: 5px 0 10px;
+	margin: 0 auto;
+	text-align: center;
+	width: 830px;
+	}
+
+#wrapper {
+	padding: 0;
+	margin: 0;
+	border: 1px solid #1E2126; border-left: 0; border-right: 0;
+	width: 100%;
+	height: 630px;
+	}
+
+#application {
+	position: relative;
+	padding: 0;
+	margin: 0 auto;
+	/* background: transparent url("editor-v1.gif"/*tpa=http://m2scripts.com/demo/layout-editor/images/editor-v1.gif*/) right 0px no-repeat; */
+	text-align: left;
+	width: 830px;
+	height: 630px;
+	}
+#application form {
+	padding: 0;
+	margin: 0;
+	display: inline;
+	}
+
+#footer {
+	padding: 0;
+	margin: 0 auto;
+	width: 830px;
+	font: normal 10px sans-serif;
+	color: #999;
+	text-align: left;
+	}
+#footer ul {
+	padding: 3px 0 0;
+	margin: 0;
+	width: 100%;
+	}
+#footer ul li {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	}
+#footer ul li.copyright {
+	float: left;
+	padding: 0;
+	line-height: 2;
+	width: 60%;
+	}
+#footer ul li.copyright a:link, #footer ul li.copyright a:visited, #footer ul li.copyright a:hover {
+	color: #999;
+	text-decoration: underline;
+	}
+#footer ul li.copyright a:hover {
+	color: #eee;
+	border-bottom: 1px solid #eee;
+	text-decoration: none;
+	}
+#footer ul li.poweredby {
+	float: right;
+	padding: 5px 0 0;
+	text-align: right;
+	width: 20%;
+	}
+
+#window {
+	position: absolute;
+	left: 0;
+	top: 58px;
+	padding: 0 0 5px;
+	margin: 0;
+	background: #FFF url("blankwindow-bottom.gif"/*tpa=http://m2scripts.com/demo/layout-editor/images/blankwindow-bottom.gif*/) left bottom no-repeat;
+	width: 830px;
+	}
+#window .innerwrap {
+	padding: 5px 0 0;
+	margin: 0;
+	background-image: url("blankwindow-top.gif"/*tpa=http://m2scripts.com/demo/layout-editor/images/blankwindow-top.gif*/);
+	background-position: left top;
+	background-repeat: no-repeat;
+	}
+#window .innerwrap .content {
+	padding: 15px 20px;
+	margin: 0;
+	background-image: url("blankwindow-bg.gif"/*tpa=http://m2scripts.com/demo/layout-editor/images/blankwindow-bg.gif*/);
+	background-position: left top;
+	background-repeat: repeat-y;
+	font: normal 9pt Arial, sans-serif;
+	color: #32373E;
+	height: 545px;
+	voice-family:"\"}\"";
+	voice-family:inherit;
+	height: 515px;
+	}
+#window .innerwrap .content h1 {
+	padding: 0;
+	margin: 0 0 15px;
+	font: normal 16pt Arial, sans-serif;
+	color: #32373E;
+	}
+#window .innerwrap .content ol {
+	padding: 0;
+	margin: 5px 0 5px 25px;
+	}
+#window .innerwrap .content ol li {
+	padding: 0;
+	margin: 0;
+	font-size: 8pt;
+	line-height: 1.6;
+	}
+#window .innerwrap .content p {
+	font-size: 8pt;
+	}
+#window .innerwrap .content textarea.codebox {
+	font-size: 11px;
+	color: #666;
+	text-align: left;
+	width: 550px;
+	height: 275px;
+	}

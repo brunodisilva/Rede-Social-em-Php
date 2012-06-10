@@ -1,0 +1,46 @@
+
+.mootabs_title {
+	list-style-image: none;
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+	height: 24px;
+}
+
+.mootabs_title li {
+	float: left;
+	background-color: #ddd;
+	padding: 2px 8px 2px 8px;
+	margin-right: 2px;
+	cursor: pointer;
+	height: 24px;
+	
+}
+
+.mootabs_title li.active {
+	background-color: #e6e6e6;
+}
+
+.mootabs_panel {
+	text-align:center;
+	display: none;
+	background-color: #f8f8f8;
+	border:1px solid #DDDDDD;
+	position: relative;
+	padding: 4px;
+	margin-bottom:5px;
+	width: 500px; height: 75px; overflow:hidden;
+
+}
+
+.mootabs_panel.active {
+	text-align:center;
+	background-color: #f8f8f8;
+	display: block;
+	border:1px solid #DDDDDD;
+	width: 500px; height: 75px; overflow:hidden;
+
+}
+
+.slideloading { width:100px; margin:0 auto; padding-top:25px; }
+.slidebuttons { clear:both; height:85px; overflow: hidden; }

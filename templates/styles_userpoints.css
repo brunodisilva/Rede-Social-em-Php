@@ -1,0 +1,268 @@
+div.xxspacer {
+  font-size:1pt;
+  margin:10px 0px;
+}
+
+.word {
+  	font-family: Tahoma;
+  	padding: 4px 4px 4px 4px;
+  	letter-spacing: 3px;
+  }
+  span.size1 {
+  	color: #000;
+  	font-size: 200%;
+  }
+  span.size2 {
+  	color: #333;
+  	font-size:180%;
+  }
+  span.size3 {
+  	color: #666;
+  	font-size: 170%;
+  }
+  span.size4 {
+  	color: #999;
+  	font-size: 160%;
+  }
+  span.size5 {
+  	color: #aaa;
+  	font-size: 150%;
+  }
+  span.size6 {
+  	color: #bbb;
+  	font-size: 140%;
+  }
+  span.size7 {
+  	color: #ccc;
+  	font-size: 130%;
+  }
+  span.size8 {
+  	color: #ddd;
+  	font-size: 120%;
+  }
+  span.size0 {
+  	color: #ccc;
+  	font-size: 100%;
+  }
+
+
+
+
+
+/* ITEM */
+
+#subscribe_now {
+background:transparent url(../images/download_now.png) no-repeat scroll left top;
+color:#993300;
+display:block;
+font-family:Tahoma,Arial;
+font-weight:bold;
+font-size:14px;
+height:26px;
+margin:0px;
+padding:0px;
+text-decoration:none;
+width:100px;
+border:0px;
+padding-bottom: 3px;
+}
+
+#subscribe_now span {
+    margin:10px;
+}
+
+#subscribenowdiv ul {
+list-style-position:inside;    
+xlist-style-type:disc;
+}
+
+.subscribe_now {
+background:transparent url(../images/download_now.png) no-repeat scroll left top;
+color:#993300 !important;
+display:block;
+font-family:Tahoma,Arial;
+font-weight:bold;
+font-size:14px;
+height:26px;
+margin:0px;
+padding:0px;
+text-decoration:none;
+width:100px;
+border:0px;
+Xpadding-bottom: 3px;
+
+Xfont-size:20px;
+padding-top:4px;
+text-align:center;
+
+}
+
+.subscribe_now:hover {
+text-decoration: none;
+}
+
+td.userpoints_postcomment {
+padding:10px;
+  border: 1px solid #DDDDDD;
+  border-top: none;
+  background: #F5F5F5;
+}
+
+td.userpoints {
+  background: #FFFFFF;
+  border: 1px solid #DDDDDD;
+  border-top: none;
+  padding: 5px 7px 5px 7px;
+margin-bottom:12px;
+}
+
+td.userpoints_comment_author {
+margin-bottom:5px;
+	background: #F1F1F1;
+	padding: 5px 7px 5px 7px;
+}
+td.userpoints_comment_body {
+padding:5px 7px 0px;
+}
+
+td.userpoints_item1 {
+vertical-align:top;
+	padding: 0px 5px 5px 0px;
+}
+td.userpoints_item2 {
+	margin-bottom: 3px;
+	padding-bottom: 2px;
+	border-bottom: 1px solid #DDDDDD;
+vertical-align:top;
+}
+
+
+
+/* AUTOCOMPLETER */
+
+
+/* TEXT-ALIGN: left -> right */
+.autocompleter_list {
+	BORDER: #DDDDDD 1px solid;
+	MARGIN-TOP: -1px;
+	FONT-SIZE: 11px;
+	Z-INDEX: 2;
+	BACKGROUND: none transparent scroll repeat 0% 0%;
+	OVERFLOW: hidden;
+	POSITION: absolute;
+	direction: ltr;
+	TEXT-ALIGN: left;
+}
+
+/*
+ 	 added direction, text-align
+.autocompleter_message {
+	direction: rtl;
+}
+*/
+.autocompleter_list .autocompleter_suggestion {
+	PADDING: 3px;
+	BORDER-TOP: #dddDDD 1px solid; 
+}
+.autocompleter_list .autocompleter_message {
+	PADDING: 3px;
+	BORDER-TOP: #ddd 1px solid;
+}
+.autocompleter_list .autocompleter_suggestion {
+	BACKGROUND: #fff;
+	FILTER: alpha(opacity=94);
+	WIDTH: 100%;
+	CURSOR: default;
+	opacity: 0.94;
+}
+.autocompleter_list .autocompleter_suggestion EM {
+	FONT-WEIGHT: bold;
+	XBACKGROUND: #F5F5F5;
+	BACKGROUND: #E7E7E7;
+	FONT-STYLE: normal;
+	COLOR: #3399FF;
+}
+
+.autocompleter_list .autocompleter_suggestion DIV {
+	COLOR: #336699;
+	text-align: left;
+}
+
+.autocompleter_list .autocompleter_suggestion SMALL {
+	PADDING-LEFT: 5px;
+	COLOR: #336699;
+}
+.autocompleter_list .autocompleter_selected {
+	BACKGROUND: #E7E7E7;
+	FILTER: alpha(opacity=100);
+	COLOR: #3399FF;
+	opacity: 1;
+}
+.autocompleter_list .autocompleter_selected EM {
+	XBACKGROUND: #5670a6;
+	BACKGROUND: #E7E7E7;
+}
+.autocompleter_list .autocompleter_message {
+	BACKGROUND: #eee; COLOR: #333;
+}
+.autocompleter_found {
+	BACKGROUND: #e1e9f6 !important;
+}
+.autocompleter_placeholder {
+	COLOR: #777 !important;
+}
+.autocompleter_iframe {
+	Z-INDEX: 1; FILTER: alpha(opacity=0); LEFT: 0px; POSITION: absolute; TOP: 0px;
+}
+
+
+
+
+
+/* CLEARFIX */
+
+.clearfix:unknown {
+	clear: both;
+    display: block;
+    visibility: hidden;
+    height: 0px;
+    content: "."
+}
+
+/* added clearfix:after for firefox to enclose floating divs */
+/* http://www.positioniseverything.net/easyclearing.html */
+.clearfix:after {
+    clear: both; 
+	visibility: hidden; 
+	height: 0px; 
+	content: "."
+}
+
+/* changed to hide from IE */
+/* should be moved to ie6.css / ie7.css ? */
+/* http://www.positioniseverything.net/easyclearing.html */
+/* Hides from IE-mac \*/
+* html .clearfix {height: 1%;}
+/* End hide from IE-mac */
+
+/* original style */
+/*
+* HTML .clearfix {
+	HEIGHT: 1%
+}
+*/
+
+.clearfix {
+	display: block
+}
+
+
+
+
+
+.apps_errmsg {
+  background:#FFEBE8 !important;
+  border:1px solid #DD3C10 !important;
+  padding:5px;
+  margin:5px;
+}
